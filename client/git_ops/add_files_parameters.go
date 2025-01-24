@@ -15,7 +15,7 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"kubesphere.io/devops-client/models"
+	"github.com/kubesphere/ks-devops-client-go/models"
 )
 
 // NewAddFilesParams creates a new AddFilesParams object,

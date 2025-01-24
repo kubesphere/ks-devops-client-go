@@ -1,4 +1,4 @@
-module kubesphere.io/devops-client
+module github.com/kubesphere/ks-devops-client-go
 
 go 1.23.3
 

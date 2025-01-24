@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"kubesphere.io/devops-client/models"
+	"github.com/kubesphere/ks-devops-client-go/models"
 )
 
 // GetFileFromBranchReader is a Reader for the GetFileFromBranch structure.

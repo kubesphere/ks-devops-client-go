@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"kubesphere.io/devops-client/models"
+	"github.com/kubesphere/ks-devops-client-go/models"
 )
 
 // GetGitRepositoryReader is a Reader for the GetGitRepository structure.

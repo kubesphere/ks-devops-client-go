@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"kubesphere.io/devops-client/models"
+	"github.com/kubesphere/ks-devops-client-go/models"
 )
 
 // StopBranchPipelineReader is a Reader for the StopBranchPipeline structure.

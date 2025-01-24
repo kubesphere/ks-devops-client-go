@@ -75,15 +75,15 @@ type UploadS2iBinaryHandlerParams struct {
 
 	/* S2ibinary.
 
-	   file to upload
-	*/
-	FormDataS2ibinary *string
-
-	/* S2ibinary.
-
 	   the name of s2ibinary
 	*/
 	PathS2ibinary string
+
+	/* S2ibinary.
+
+	   file to upload
+	*/
+	FormDataS2ibinary *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -160,17 +160,6 @@ func (o *UploadS2iBinaryHandlerParams) SetNamespace(namespace string) {
 	o.Namespace = namespace
 }
 
-// WithFormDataS2ibinary adds the s2ibinary to the upload s2i binary handler params
-func (o *UploadS2iBinaryHandlerParams) WithFormDataS2ibinary(s2ibinary *string) *UploadS2iBinaryHandlerParams {
-	o.SetFormDataS2ibinary(s2ibinary)
-	return o
-}
-
-// SetFormDataS2ibinary adds the s2ibinary to the upload s2i binary handler params
-func (o *UploadS2iBinaryHandlerParams) SetFormDataS2ibinary(s2ibinary *string) {
-	o.FormDataS2ibinary = s2ibinary
-}
-
 // WithPathS2ibinary adds the s2ibinary to the upload s2i binary handler params
 func (o *UploadS2iBinaryHandlerParams) WithPathS2ibinary(s2ibinary string) *UploadS2iBinaryHandlerParams {
 	o.SetPathS2ibinary(s2ibinary)
@@ -180,6 +169,17 @@ func (o *UploadS2iBinaryHandlerParams) WithPathS2ibinary(s2ibinary string) *Uplo
 // SetPathS2ibinary adds the s2ibinary to the upload s2i binary handler params
 func (o *UploadS2iBinaryHandlerParams) SetPathS2ibinary(s2ibinary string) {
 	o.PathS2ibinary = s2ibinary
+}
+
+// WithFormDataS2ibinary adds the s2ibinary to the upload s2i binary handler params
+func (o *UploadS2iBinaryHandlerParams) WithFormDataS2ibinary(s2ibinary *string) *UploadS2iBinaryHandlerParams {
+	o.SetFormDataS2ibinary(s2ibinary)
+	return o
+}
+
+// SetFormDataS2ibinary adds the s2ibinary to the upload s2i binary handler params
+func (o *UploadS2iBinaryHandlerParams) SetFormDataS2ibinary(s2ibinary *string) {
+	o.FormDataS2ibinary = s2ibinary
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -210,6 +210,11 @@ func (o *UploadS2iBinaryHandlerParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 
+	// path param s2ibinary
+	if err := r.SetPathParam("s2ibinary", o.PathS2ibinary); err != nil {
+		return err
+	}
+
 	if o.FormDataS2ibinary != nil {
 
 		// form param s2ibinary
@@ -223,11 +228,6 @@ func (o *UploadS2iBinaryHandlerParams) WriteToRequest(r runtime.ClientRequest, r
 				return err
 			}
 		}
-	}
-
-	// path param s2ibinary
-	if err := r.SetPathParam("s2ibinary", o.PathS2ibinary); err != nil {
-		return err
 	}
 
 	if len(res) > 0 {
